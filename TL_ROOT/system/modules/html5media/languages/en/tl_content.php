@@ -33,8 +33,10 @@
 $GLOBALS['TL_LANG']['tl_content']['movie_width']    = array('Movie width', 'Enter the height the movie.');
 $GLOBALS['TL_LANG']['tl_content']['movie_height']    = array('Movie height', 'Enter the width of the movie.');
 $GLOBALS['TL_LANG']['tl_content']['movie_preview']    = array('Fallback preview image', 'Please select a preview image for the non HTML5 fallback version.');
+$GLOBALS['TL_LANG']['tl_content']['movie_webm']    = array('WebM movie file', 'Please select a WebM (WEBM) movie file from the files directory.');
 $GLOBALS['TL_LANG']['tl_content']['movie_mp4']    = array('MP4 movie file', 'Please select a H.264 (MP4) movie file from the files directory.');
 $GLOBALS['TL_LANG']['tl_content']['movie_ogg']    = array('OGG movie file', 'Please select a Theora (OGV) movie file from the files directory.');
+$GLOBALS['TL_LANG']['tl_content']['audio_webm']    = array('WebM audio file', 'Please select a WebM audio file from the files directory.');
 $GLOBALS['TL_LANG']['tl_content']['audio_mp3']    = array('MP3 audio file', 'Please select a MP3 audio file from the files directory.');
 $GLOBALS['TL_LANG']['tl_content']['audio_ogg']    = array('OGG audio file', 'Please select an OGG audio file from the files directory.');
 $GLOBALS['TL_LANG']['tl_content']['movie_controls']    = array('Show movie controls', 'Please check if movie controls should be presented.');

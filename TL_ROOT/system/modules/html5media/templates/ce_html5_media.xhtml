@@ -6,8 +6,12 @@
 <?php endif; ?>
 
 <div class="html5media">
-<?php if (strlen($this->movie_ogg) + strlen($this->movie_mp4) > 0): ?>	
-  <video class="video"<?php if (strlen($this->preview)): ?> poster="<?php echo $this->preview; ?>"<?php endif; ?> width="<?php echo $this->width; ?>" height="<?php echo $this->height; ?>"<?php if ($this->movie_controls): ?> controls="controls"<?php endif; ?><?php if ($this->movie_preload): ?> preload="auto"<?php endif; ?><?php if ($this->movie_loop): ?> loop="loop"<?php endif; ?><?php if ($this->movie_autoplay): ?> autoplay="autoplay"<?php endif; ?>>
+<?php if (strlen($this->movie_webm) + strlen($this->movie_ogg) + strlen($this->movie_mp4) > 0): ?>	
+  <video class="video"<?php if (strlen($this->preview)): ?> poster="<?php echo $this->preview; ?>"<?php endif; ?> width="<?php echo $this->width; ?>" height="<?php echo $this->height; ?>"<?php if ($this->movie_controls): ?> controls="controls"<?php endif; ?> preload="<?php echo (!$this->movie_preload || TL_MODE=='BE') ? 'none' : 'auto'; ?>"<?php if ($this->movie_loop): ?> loop="loop"<?php endif; ?><?php if ($this->movie_autoplay): ?> autoplay="autoplay"<?php endif; ?>>
+  
+<?php if (strlen($this->movie_webm) > 0): ?>	
+      <source src="<?php echo $this->movie_webm; ?>" type='video/webm' />
+<?php endif; ?>
 <?php if (strlen($this->movie_ogg) > 0): ?>	
       <source src="<?php echo $this->movie_ogg; ?>" type='video/ogg; codecs="theora, vorbis"' />
 <?php endif; ?>
@@ -16,8 +20,11 @@
 <?php endif; ?>
   </video>
 <?php endif; ?>
-<?php if (strlen($this->audio_ogg) + strlen($this->audio_mp3) > 0): ?>	
-  <audio class="audio"<?php if ($this->audio_controls): ?> controls="controls"<?php endif; ?><?php if ($this->audio_preload): ?> preload="auto"<?php endif; ?><?php if ($this->audio_loop): ?> loop="loop"<?php endif; ?><?php if ($this->audio_autoplay): ?> autoplay="autoplay"<?php endif; ?>>
+<?php if (strlen($this->audio_webm) + strlen($this->audio_ogg) + strlen($this->audio_mp3) > 0): ?>	
+  <audio class="audio"<?php if ($this->audio_controls): ?> controls="controls"<?php endif; ?> preload="<?php echo (!$this->audio_preload || TL_MODE=='BE') ? 'none' : 'auto'; ?>"<?php if ($this->audio_loop): ?> loop="loop"<?php endif; ?><?php if ($this->audio_autoplay): ?> autoplay="autoplay"<?php endif; ?>>
+<?php if (strlen($this->audio_webm) > 0): ?>	
+      <source src="<?php echo $this->audio_webm; ?>" type='audio/webm' />
+<?php endif; ?>
 <?php if (strlen($this->audio_ogg) > 0): ?>	
       <source src="<?php echo $this->audio_ogg; ?>" type='audio/ogg; codecs="vorbis"' />
 <?php endif; ?>

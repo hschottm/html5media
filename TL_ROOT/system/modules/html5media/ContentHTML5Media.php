@@ -52,7 +52,7 @@ class ContentHTML5Media extends ContentElement
 	public function generate()
 	{
 		// Return if there is no file
-		if (!strlen($this->movie_ogg) && !strlen($this->movie_mp4) && !strlen($this->audio_ogg) && !strlen($this->audio_mp3))
+		if (!strlen($this->movie_webm) && !strlen($this->movie_ogg) && !strlen($this->movie_mp4) && !strlen($this->audio_webm) && !strlen($this->audio_ogg) && !strlen($this->audio_mp3))
 		{
 			return '';
 		}
@@ -71,12 +71,14 @@ class ContentHTML5Media extends ContentElement
 		$this->Template->movie_preload = $this->movie_preload;
 		$this->Template->movie_loop = $this->movie_loop;
 		$this->Template->movie_autoplay = $this->movie_autoplay;
+		$this->Template->movie_webm = $this->movie_webm;
 		$this->Template->movie_ogg = $this->movie_ogg;
 		$this->Template->movie_mp4 = $this->movie_mp4;
 		$this->Template->audio_controls = $this->audio_controls;
 		$this->Template->audio_preload = $this->audio_preload;
 		$this->Template->audio_loop = $this->audio_loop;
 		$this->Template->audio_autoplay = $this->audio_autoplay;
+		$this->Template->audio_webm = $this->audio_webm;
 		$this->Template->audio_ogg = $this->audio_ogg;
 		$this->Template->audio_mp3 = $this->audio_mp3;
 		$this->Template->preview = $this->movie_preview;

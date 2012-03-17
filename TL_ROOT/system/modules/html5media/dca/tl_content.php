@@ -30,7 +30,7 @@
 /**
  * Table tl_content
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['html5'] = '{type_legend},type,headline;{movie_legend},movie_mp4,movie_ogg,movie_preview,movie_width,movie_height,movie_controls,movie_preload,movie_autoplay,movie_loop;{audio_legend},audio_mp3,audio_ogg,audio_controls,audio_preload,audio_autoplay,audio_loop;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['html5'] = '{type_legend},type,headline;{movie_legend},movie_webm,movie_mp4,movie_ogg,movie_preview,movie_width,movie_height,movie_controls,movie_preload,movie_autoplay,movie_loop;{audio_legend},audio_webm,audio_mp3,audio_ogg,audio_controls,audio_preload,audio_autoplay,audio_loop;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['movie_controls'] = array
 (
@@ -85,6 +85,14 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['movie_preview'] = array(
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'mandatory'=>false, 'tl_class'=>'clr')
 );
 
+$GLOBALS['TL_DCA']['tl_content']['fields']['movie_webm'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['movie_webm'],
+	'exclude'                 => true,
+	'inputType'               => 'fileTree',
+	'validFileTypes'          => 'webm',
+	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'extensions' => 'webm', 'mandatory'=>false, 'tl_class'=>'clr')
+);
+
 $GLOBALS['TL_DCA']['tl_content']['fields']['movie_mp4'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['movie_mp4'],
 	'exclude'                 => true,
@@ -131,6 +139,14 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['audio_loop'] = array
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50 m12')
+);
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['audio_webm'] = array(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['audio_mp3'],
+	'exclude'                 => true,
+	'inputType'               => 'fileTree',
+	'validFileTypes'          => 'webm',
+	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'extensions' => 'webm', 'mandatory'=>false, 'tl_class'=>'clr')
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['audio_mp3'] = array(
