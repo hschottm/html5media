@@ -28,5 +28,7 @@ CREATE TABLE `tl_content` (
 `audio_autoplay` char(1) NOT NULL default '',
 `audio_webm` varchar(255) NOT NULL default '',
 `audio_mp3` varchar(255) NOT NULL default '',
-`audio_ogg` varchar(255) NOT NULL default ''
+`audio_ogg` varchar(255) NOT NULL default '',
+`audio_order` blob NULL,
+`movie_order` blob NULL,
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

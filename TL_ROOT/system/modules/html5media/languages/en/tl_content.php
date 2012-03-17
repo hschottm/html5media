@@ -47,6 +47,8 @@ $GLOBALS['TL_LANG']['tl_content']['audio_controls']    = array('Show audio contr
 $GLOBALS['TL_LANG']['tl_content']['audio_preload']    = array('Preload audio', 'Please check if the audio file should be preloaded.');
 $GLOBALS['TL_LANG']['tl_content']['audio_autoplay']    = array('Autoplay audio', 'Please check if the audio file should play automatically.');
 $GLOBALS['TL_LANG']['tl_content']['audio_loop']    = array('Loop audio', 'Please check if the audio file should be repeated permanently.');
+$GLOBALS['TL_LANG']['tl_content']['audio_order']   = array('Audio order', 'Please define the usage/fallback order of your embedded audio files.');
+$GLOBALS['TL_LANG']['tl_content']['movie_order']   = array('Movie order', 'Please define the usage/fallback order of your embedded movie files.');
 
 $GLOBALS['TL_LANG']['tl_content']['movie_legend']    = 'Movie settings';
 $GLOBALS['TL_LANG']['tl_content']['audio_legend']    = 'Audio settings';

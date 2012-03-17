@@ -57,6 +57,8 @@ class ContentHTML5Media extends ContentElement
 			return '';
 		}
 
+		$this->movie_order = deserialize($this->movie_order, true);
+		$this->audio_order = deserialize($this->audio_order, true);
 		return parent::generate();
 	}
 
@@ -74,6 +76,20 @@ class ContentHTML5Media extends ContentElement
 		$this->Template->movie_webm = $this->movie_webm;
 		$this->Template->movie_ogg = $this->movie_ogg;
 		$this->Template->movie_mp4 = $this->movie_mp4;
+		$movieformats = array('mp4','ogg','webm');
+		if (!is_array($this->movie_order || count($this->movie_order) < count($movieformats)))
+		{
+			$neworder = (is_array($this->movie_order)) ? $this->movie_order : array();
+			foreach ($movieformats as $format)
+			{
+				if (!in_array($format, $neworder))
+				{
+					array_push($neworder, $format);
+				}
+			}
+			$this->movie_order = $neworder;
+		}
+		$this->Template->movie_order = $this->movie_order;
 		$this->Template->audio_controls = $this->audio_controls;
 		$this->Template->audio_preload = $this->audio_preload;
 		$this->Template->audio_loop = $this->audio_loop;
@@ -81,6 +97,20 @@ class ContentHTML5Media extends ContentElement
 		$this->Template->audio_webm = $this->audio_webm;
 		$this->Template->audio_ogg = $this->audio_ogg;
 		$this->Template->audio_mp3 = $this->audio_mp3;
+		$audioformats = array('mp3','ogg','webm');
+		if (!is_array($this->audio_order || count($this->audio_order) < count($audioformats)))
+		{
+			$neworder = (is_array($this->audio_order)) ? $this->audio_order : array();
+			foreach ($audioformats as $format)
+			{
+				if (!in_array($format, $neworder))
+				{
+					array_push($neworder, $format);
+				}
+			}
+			$this->audio_order = $neworder;
+		}
+		$this->Template->audio_order = $this->audio_order;
 		$this->Template->preview = $this->movie_preview;
 		$this->Template->width = ($this->movie_width) ? $this->movie_width : 320;
 		$this->Template->height = ($this->movie_height) ? $this->movie_height : 200;

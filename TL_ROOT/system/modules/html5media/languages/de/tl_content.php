@@ -51,5 +51,7 @@ $GLOBALS['TL_LANG']['tl_content']['audio_loop']['0'] = "Audiodatei wiederholen";
 $GLOBALS['TL_LANG']['tl_content']['audio_loop']['1'] = "Wählen Sie aus, ob die Audiodatei in einer Schleife wiederholt werden soll.";
 $GLOBALS['TL_LANG']['tl_content']['movie_legend'] = "Film-Einstellungen";
 $GLOBALS['TL_LANG']['tl_content']['audio_legend'] = "Audio-Einstellungen";
+$GLOBALS['TL_LANG']['tl_content']['audio_order']   = array('Audio-Reihenfolge', 'Bitte legen Sie die Abspiel- bzw. Ausweichreihenfolge Ihrer ausgewählten Audio-Dateien fest.');
+$GLOBALS['TL_LANG']['tl_content']['movie_order']   = array('Film-Reihenfolge', 'Bitte legen Sie die Abspiel- bzw. Ausweichreihenfolge Ihrer ausgewählten Film-Dateien fest.');
  
 ?>
