@@ -1,38 +1,20 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
- * TYPOlight Open Source CMS
- * Copyright (C) 2005-2010 Leo Feyer
- *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 3 of the License, or (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at <http://www.gnu.org/licenses/>.
- *
- * PHP version 5
- * @copyright  Helmut Schottmüller 2010
- * @author     Helmut Schottmüller <http://www.aurealis.de>
- * @package    Frontend
+ * @copyright  Helmut Schottmüller 2009-2013
+ * @author     Helmut Schottmüller <https://github.com/hschottm/html5media>
+ * @package    html5media
  * @license    LGPL
- * @filesource
  */
 
+namespace Contao;
 
 /**
  * Class ContentHTML5Media
  *
  * Front end content element "HTML5 media element with Flash fallback".
- * @copyright  Helmut Schottmüller 2010
- * @author     Helmut Schottmüller <http://www.aurealis.de>
+ * @copyright  Helmut Schottmüller 2009-2013
+ * @author     Helmut Schottmüller <https://github.com/hschottm/html5media>
  * @package    Controller
  */
 class ContentHTML5Media extends ContentElement
@@ -62,20 +44,32 @@ class ContentHTML5Media extends ContentElement
 		return parent::generate();
 	}
 
+	protected function getFilePathForId($id)
+	{
+		if ($id > 0)
+		{
+			$model = \FilesModel::findOneById($id);
+			return $model->path;
+		}
+		else
+		{
+			return '';
+		}
+	}
 
 	/**
 	 * Generate content element
 	 */
 	protected function compile()
 	{
-		$GLOBALS['TL_JAVASCRIPT'][] = 'plugins/html5media/html5media.min.js';
+		$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/html5media/vendor/html5media/html5media.min.js';
 		$this->Template->movie_controls = $this->movie_controls;
 		$this->Template->movie_preload = $this->movie_preload;
 		$this->Template->movie_loop = $this->movie_loop;
 		$this->Template->movie_autoplay = $this->movie_autoplay;
-		$this->Template->movie_webm = $this->movie_webm;
-		$this->Template->movie_ogg = $this->movie_ogg;
-		$this->Template->movie_mp4 = $this->movie_mp4;
+		$this->Template->movie_webm = $this->getFilePathForId($this->movie_webm);
+		$this->Template->movie_ogg = $this->getFilePathForId($this->movie_ogg);
+		$this->Template->movie_mp4 = $this->getFilePathForId($this->movie_mp4);
 		$movieformats = array('mp4','ogg','webm');
 		if (!is_array($this->movie_order || count($this->movie_order) < count($movieformats)))
 		{
@@ -94,9 +88,9 @@ class ContentHTML5Media extends ContentElement
 		$this->Template->audio_preload = $this->audio_preload;
 		$this->Template->audio_loop = $this->audio_loop;
 		$this->Template->audio_autoplay = $this->audio_autoplay;
-		$this->Template->audio_webm = $this->audio_webm;
-		$this->Template->audio_ogg = $this->audio_ogg;
-		$this->Template->audio_mp3 = $this->audio_mp3;
+		$this->Template->audio_webm = $this->getFilePathForId($this->audio_webm);
+		$this->Template->audio_ogg = $this->getFilePathForId($this->audio_ogg);
+		$this->Template->audio_mp3 = $this->getFilePathForId($this->audio_mp3);
 		$audioformats = array('mp3','ogg','webm');
 		if (!is_array($this->audio_order || count($this->audio_order) < count($audioformats)))
 		{
