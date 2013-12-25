@@ -46,7 +46,7 @@ class ContentHTML5Media extends \ContentElement
 
 	protected function getFilePathForId($id)
 	{
-		if ($id > 0)
+		if (strlen($id) > 0)
 		{
 			$model = \FilesModel::findOneById($id);
 			return $model->path;
