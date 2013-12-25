@@ -17,7 +17,7 @@ namespace Contao;
  * @author     Helmut Schottmüller <https://github.com/hschottm/html5media>
  * @package    Controller
  */
-class ContentHTML5Media extends ContentElement
+class ContentHTML5Media extends \ContentElement
 {
 
 	/**
@@ -111,4 +111,3 @@ class ContentHTML5Media extends ContentElement
 	}
 }
 
-?>

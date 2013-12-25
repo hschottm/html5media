@@ -69,7 +69,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['movie_preview'] = array(
 	'exclude'                 => true,
 	'inputType'               => 'fileTree',
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'mandatory'=>false, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => "binary(16) NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['movie_webm'] = array(
@@ -78,7 +78,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['movie_webm'] = array(
 	'inputType'               => 'fileTree',
 	'validFileTypes'          => 'webm',
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'extensions' => 'webm', 'mandatory'=>false, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => "binary(16) NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['movie_mp4'] = array(
@@ -87,7 +87,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['movie_mp4'] = array(
 	'inputType'               => 'fileTree',
 	'validFileTypes'          => 'mp4',
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'extensions' => 'mp4', 'mandatory'=>false, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => "binary(16) NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['movie_ogg'] = array(
@@ -96,7 +96,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['movie_ogg'] = array(
 	'inputType'               => 'fileTree',
 	'validFileTypes'          => 'ogv',
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'extensions' => 'ogv', 'mandatory'=>false, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => "binary(16) NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['audio_controls'] = array
@@ -141,7 +141,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['audio_webm'] = array(
 	'inputType'               => 'fileTree',
 	'validFileTypes'          => 'webm',
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'extensions' => 'webm', 'mandatory'=>false, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => "binary(16) NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['audio_mp3'] = array(
@@ -150,7 +150,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['audio_mp3'] = array(
 	'inputType'               => 'fileTree',
 	'validFileTypes'          => 'mp3',
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'extensions' => 'mp3', 'mandatory'=>false, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => "binary(16) NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['audio_ogg'] = array(
@@ -159,7 +159,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['audio_ogg'] = array(
 	'inputType'               => 'fileTree',
 	'validFileTypes'          => 'ogg',
 	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly' => true, 'extensions' => 'ogg', 'mandatory'=>false, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => "binary(16) NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['audio_order'] = array(
@@ -181,5 +181,3 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['movie_order'] = array(
 	'eval'                    => array('multiple'=>true, 'feEditable'=>true, 'feGroup'=>'login'),
 	'sql'                     => "blob NULL"
 );
-
-?>
