@@ -105,7 +105,7 @@ class ContentHTML5Media extends ContentElement
 			$this->audio_order = $neworder;
 		}
 		$this->Template->audio_order = $this->audio_order;
-		$this->Template->preview = $this->movie_preview;
+		$this->Template->preview = $this->getFilePathForId($this->movie_preview);
 		$this->Template->width = ($this->movie_width) ? $this->movie_width : 320;
 		$this->Template->height = ($this->movie_height) ? $this->movie_height : 200;
 	}
