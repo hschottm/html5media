@@ -168,7 +168,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['audio_order'] = array(
 	'filter'                  => true,
 	'inputType'               => 'checkboxWizard',
 	'options'                 => array('mp3','ogg','webm'),
-	'eval'                    => array('multiple'=>true, 'feEditable'=>true, 'feGroup'=>'login'),
+	'eval'                    => array('multiple'=>true, 'feEditable'=>true, 'feGroup'=>'login', 'tl_class'=>'clr'),
 	'sql'                     => "blob NULL"
 );
 
@@ -178,6 +178,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['movie_order'] = array(
 	'filter'                  => true,
 	'inputType'               => 'checkboxWizard',
 	'options'                 => array('mp4','ogg','webm'),
-	'eval'                    => array('multiple'=>true, 'feEditable'=>true, 'feGroup'=>'login'),
+	'eval'                    => array('multiple'=>true, 'feEditable'=>true, 'feGroup'=>'login', 'tl_class'=>'clr'),
 	'sql'                     => "blob NULL"
 );
