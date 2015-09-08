@@ -48,7 +48,7 @@ class ContentHTML5Media extends \ContentElement
 	{
 		if (strlen($id) > 0)
 		{
-			$model = \FilesModel::findOneById($id);
+			$model = \FilesModel::findByUuid($id);
 			return $model->path;
 		}
 		else
